@@ -2,6 +2,7 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
+@use 'custom-palette' as custom;
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -12,8 +13,9 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$ventalis-front-primary: mat.define-palette(mat.$light-green-palette);
-$ventalis-front-accent: mat.define-palette(mat.$green-palette, A300, A100, A900);
+$ventalis-front-primary: mat.define-palette(custom.$vtl-grey-palette, 800);
+$ventalis-front-secondary: mat.define-palette(custom.$vtl-grey-palette, 900);
+$ventalis-front-accent: mat.define-palette(custom.$vtl-green-palette, 500, A200, A100, A700);
 
 // The warn palette is optional (defaults to red).
 $ventalis-front-warn: mat.define-palette(mat.$deep-orange-palette);
@@ -23,10 +25,89 @@ $ventalis-front-warn: mat.define-palette(mat.$deep-orange-palette);
 $ventalis-front-theme: mat.define-light-theme((
   color: (
     primary: $ventalis-front-primary,
+    secondary: $ventalis-front-secondary,
     accent: $ventalis-front-accent,
     warn: $ventalis-front-warn,
   )
 ));
+
+
+// Background palette for light themes.
+$light-theme-background-palette: (
+  status-bar: mat.define-palette(custom.$vtl-grey-palette, 300),
+  app-bar:    mat.define-palette(custom.$vtl-grey-palette, 100),
+  background: mat.define-palette(custom.$vtl-grey-palette, 50),
+  hover:      rgba(black, 0.04), // TODO(kara): check style with Material Design UX
+  card:       white,
+  dialog:     white,
+  disabled-button: rgba(black, 0.12),
+  raised-button: white,
+  focused-button: custom.$dark-focused,
+  selected-button: mat.define-palette(custom.$vtl-grey-palette, 300),
+  selected-disabled-button: mat.define-palette(custom.$vtl-grey-palette, 400),
+  disabled-button-toggle: mat.define-palette(custom.$vtl-grey-palette, 200),
+  unselected-chip: mat.define-palette(custom.$vtl-grey-palette, 300),
+  disabled-list-option: mat.define-palette(custom.$vtl-grey-palette, 200),
+  tooltip: mat.define-palette(custom.$vtl-grey-palette, 700),
+);
+
+// Background palette for dark themes.
+$dark-theme-background-palette: (
+  status-bar: black,
+  app-bar:    mat.define-palette(custom.$vtl-grey-palette, 900),
+  background: #303030,
+  hover:      rgba(white, 0.04), // TODO(kara): check style with Material Design UX
+  card:       mat.define-palette(custom.$vtl-grey-palette, 800),
+  dialog:     mat.define-palette(custom.$vtl-grey-palette, 800),
+  disabled-button: rgba(white, 0.12),
+  raised-button: mat.define-palette(custom.$vtl-grey-palette, 800),
+  focused-button: custom.$light-focused,
+  selected-button: mat.define-palette(custom.$vtl-grey-palette, 900),
+  selected-disabled-button: mat.define-palette(custom.$vtl-grey-palette, 800),
+  disabled-button-toggle: black,
+  unselected-chip: mat.define-palette(custom.$vtl-grey-palette, 700),
+  disabled-list-option: rgba(white, 0.12),
+  tooltip: mat.define-palette(custom.$vtl-grey-palette, 700),
+);
+
+// Foreground palette for light themes.
+$light-theme-foreground-palette: (
+  base:              black,
+  divider:           custom.$dark-dividers,
+  dividers:          custom.$dark-dividers,
+  disabled:          custom.$dark-disabled-text,
+  disabled-button:   rgba(black, 0.26),
+  disabled-text:     custom.$dark-disabled-text,
+  elevation:         black,
+  hint-text:         custom.$dark-disabled-text,
+  secondary-text:    custom.$dark-secondary-text,
+  icon:              rgba(black, 0.54),
+  icons:             rgba(black, 0.54),
+  text:              rgba(black, 0.87),
+  slider-min:        rgba(black, 0.87),
+  slider-off:        rgba(black, 0.26),
+  slider-off-active: rgba(black, 0.38),
+);
+
+// Foreground palette for dark themes.
+$dark-theme-foreground-palette: (
+  base:              white,
+  divider:           custom.$light-dividers,
+  dividers:          custom.$light-dividers,
+  disabled:          custom.$light-disabled-text,
+  disabled-button:   rgba(white, 0.3),
+  disabled-text:     custom.$light-disabled-text,
+  elevation:         black,
+  hint-text:         custom.$light-disabled-text,
+  secondary-text:    custom.$light-secondary-text,
+  icon:              white,
+  icons:             white,
+  text:              white,
+  slider-min:        white,
+  slider-off:        rgba(white, 0.3),
+  slider-off-active: rgba(white, 0.3),
+);
+
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
