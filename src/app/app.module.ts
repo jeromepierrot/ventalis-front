@@ -10,10 +10,10 @@ import { HomeComponent } from './home/home.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
-import { LoginComponent } from './login/login.component';
+import { LoginFormComponent } from './login-form/login-form.component';
 import { LoginButtonMenuComponent } from './login-button-menu/login-button-menu.component';
 import { LangButtonMenuComponent } from './lang-button-menu/lang-button-menu.component';
-import { SigninComponent } from './signin/signin.component';
+import { SigninFormComponent } from './signin-form/signin-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatButtonModule } from "@angular/material/button";
@@ -38,9 +38,11 @@ import { MatDividerModule } from "@angular/material/divider";
     CatalogComponent,
     AboutComponent,
     ContactComponent,
-    LoginComponent,
-    SigninComponent,
+
+    LoginFormComponent,
     LoginButtonMenuComponent,
+    SigninFormComponent,
+
     LangButtonMenuComponent,
     AdminButtonMenuComponent,
     AdminContentComponent,

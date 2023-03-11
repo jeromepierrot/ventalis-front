@@ -1,11 +1,11 @@
 <!-- Ce bouton "Cart" devra être masqué dans les espaces administrateur et intranet -->
 <!-- mais son "espace" doit être conservé par rapport au bouton Connexion -->
-<button mat-flat-button color="primary">
+<button mat-flat-button color="primary" *ngIf="hasRoleUser">
   <mat-icon>shopping_cart</mat-icon>
   <span>Cart</span>
 </button>
 
-<button mat-flat-button color="accent" [matMenuTriggerFor]="intranet_menu">
+<button mat-flat-button color="primary" [matMenuTriggerFor]="intranet_menu">
   <mat-icon>power_settings_new</mat-icon>
   <span>Intranet</span>
 </button>
@@ -25,18 +25,18 @@
     <span>Catalogue</span>
   </button>
   <!-- Bouton (optionnel) d'accès direct à la création de catégorie (?), si besoin -->
-  <button mat-menu-item>
+  <button mat-menu-item *ngIf="!hideShortcutMenuItems">
     <mat-icon>import_contacts</mat-icon>
     <span>Catégorie</span>
   </button>
   <!-- Bouton (optionnel) d'accès direct à la création de produit (?), si besoin -->
-  <button mat-menu-item>
+  <button mat-menu-item *ngIf="!hideShortcutMenuItems">
     <mat-icon>card_giftcard</mat-icon>
     <span>Produits</span>
   </button>
   <mat-divider></mat-divider>
   <!-- Bouton vers "support technique" (email vers un admin ?), si besoin -->
-    <button mat-menu-item>
+    <button mat-menu-item *ngIf="!hideSupportMenuItem">
       <mat-icon>settings</mat-icon>
       <span>Support</span>
     </button>

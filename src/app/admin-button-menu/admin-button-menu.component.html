@@ -1,6 +1,6 @@
 <!-- Ce bouton "Cart" devra être masqué dans les espaces administrateur et intranet -->
 <!-- mais son "espace" doit être conservé par rapport au bouton Connexion -->
-  <button mat-flat-button color="primary">
+  <button mat-flat-button color="primary" *ngIf="hasRoleUser">
     <mat-icon>shopping_cart</mat-icon>
     <span>Cart</span>
   </button>
@@ -21,10 +21,10 @@
     </button>
     <mat-divider></mat-divider>
     <!-- Bouton vers "support technique" (un autre admin ?), si besoin -->
-    <!--  <button mat-menu-item>
+      <button mat-menu-item *ngIf="!hideSupportMenuItem">
         <mat-icon>miscellaneous_services</mat-icon>
         <span>Support</span>
-      </button>-->
+      </button>
     <button mat-menu-item>
       <mat-icon>power_settings_new</mat-icon>
       <span>Déconnexion</span>

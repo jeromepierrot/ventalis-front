@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin-button-menu.component.scss']
 })
 export class AdminButtonMenuComponent {
+  /**
+   * Options to show/hide items in the navbar menu
+   */
+  public hideSupportMenuItem: boolean = true;
 
+  ///// FOR TESTING Purposes ///// TODO: to be removed when auhtentification is set or mocks up */
+  public hasRoleUser: boolean = false;
+  public hasRoleEmployee: boolean = false;
+  public hasRoleAdmin: boolean = true;
+
+  ///// END OF TEST PART /////
 }

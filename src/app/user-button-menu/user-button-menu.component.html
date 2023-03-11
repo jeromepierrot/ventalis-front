@@ -25,19 +25,19 @@
     <span>Mes commandes</span>
   </button>
   <!-- Bouton (optionnel) car accès direct au panier dans le menu de navigation -->
-  <button mat-menu-item>
+  <button mat-menu-item *ngIf="!hideShortcutMenuItems">
     <mat-icon>shopping_cart</mat-icon>
     <span>Mon panier</span>
   </button>
   <!-- Bouton (optionnel) d'accès direct à la création de produit (?), si besoin -->
-  <button mat-menu-item>
+  <button mat-menu-item *ngIf="!hideShortcutMenuItems">
     <!--    <mat-icon>favorite</mat-icon> -->
     <mat-icon>eco</mat-icon>
     <span>Mes produits favoris</span>
   </button>
   <mat-divider></mat-divider>
   <!-- Bouton vers "support technique" (email vers un admin ?), si besoin -->
-  <button mat-menu-item>
+  <button mat-menu-item *ngIf="!hideSupportMenuItem">
     <mat-icon>settings</mat-icon>
     <span>Support</span>
   </button>

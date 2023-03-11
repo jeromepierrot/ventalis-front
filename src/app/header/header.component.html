@@ -13,6 +13,9 @@
     <button mat-button color="primary" (click)="onViewCatalog()">Catalogue</button>
     <button mat-button color="primary" (click)="onViewAbout()">Présentation</button>
     <button mat-button color="primary" (click)="onViewContact()">Contact</button>
-    <vtl-login-button-menu (click)="onViewLogin()">Se connecter</vtl-login-button-menu>
+    <vtl-login-button-menu *ngIf="!isLoggedIn" (click)="onViewLogin()">Se connecter</vtl-login-button-menu>
+    <vtl-user-button-menu *ngIf="isLoggedIn && hasUserRole"></vtl-user-button-menu>
+    <vtl-intranet-button-menu  *ngIf="isLoggedIn && hasEmployeeRole"></vtl-intranet-button-menu>
+    <vtl-admin-button-menu *ngIf="isLoggedIn && hasAdminRole"></vtl-admin-button-menu>
   </mat-toolbar-row>
 </mat-toolbar>
