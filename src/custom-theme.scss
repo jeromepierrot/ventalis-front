@@ -14,8 +14,8 @@
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $ventalis-front-primary: mat.define-palette(custom.$vtl-grey-palette, 800);
-$ventalis-front-secondary: mat.define-palette(custom.$vtl-grey-palette, 900);
-$ventalis-front-accent: mat.define-palette(custom.$vtl-green-palette, 500, A200, A100, A700);
+$ventalis-front-secondary: mat.define-palette(custom.$vtl-green-palette, 800);
+$ventalis-front-accent: mat.define-palette(custom.$vtl-green-palette, 800, A700);
 
 // The warn palette is optional (defaults to red).
 $ventalis-front-warn: mat.define-palette(mat.$deep-orange-palette);
