@@ -1,0 +1,47 @@
+<!-- Ce bouton "Cart" devra être masqué dans les espaces administrateur et intranet -->
+<!-- mais son "espace" doit être conservé par rapport au bouton Connexion -->
+<button mat-flat-button color="primary">
+  <mat-icon>shopping_cart</mat-icon>
+  <span>Cart</span>
+</button>
+
+<button mat-flat-button color="accent" [matMenuTriggerFor]="intranet_menu">
+  <mat-icon>power_settings_new</mat-icon>
+  <span>Intranet</span>
+</button>
+
+<mat-menu #intranet_menu="matMenu" xPosition="before">
+  <button mat-menu-item>
+    <mat-icon>account_box</mat-icon>
+    <span>Espace Intranet</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>contact_phone</mat-icon>
+    <span>Clients</span>
+  </button>
+  <mat-divider></mat-divider>
+  <button mat-menu-item>
+    <mat-icon>menu_book</mat-icon>
+    <span>Catalogue</span>
+  </button>
+  <!-- Bouton (optionnel) d'accès direct à la création de catégorie (?), si besoin -->
+  <button mat-menu-item>
+    <mat-icon>import_contacts</mat-icon>
+    <span>Catégorie</span>
+  </button>
+  <!-- Bouton (optionnel) d'accès direct à la création de produit (?), si besoin -->
+  <button mat-menu-item>
+    <mat-icon>card_giftcard</mat-icon>
+    <span>Produits</span>
+  </button>
+  <mat-divider></mat-divider>
+  <!-- Bouton vers "support technique" (email vers un admin ?), si besoin -->
+    <button mat-menu-item>
+      <mat-icon>settings</mat-icon>
+      <span>Support</span>
+    </button>
+  <button mat-menu-item>
+    <mat-icon>power_settings_new</mat-icon>
+    <span>Déconnexion</span>
+  </button>
+</mat-menu>

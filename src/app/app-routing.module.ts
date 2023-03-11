@@ -7,8 +7,14 @@ import { AboutComponent } from "./about/about.component";
 import { ContactComponent } from "./contact/contact.component";
 import { LoginComponent } from "./login/login.component";
 import { SigninComponent } from "./signin/signin.component";
+import { AdminContentComponent } from "./admin-content/admin-content.component";
+import { IntranetContentComponent } from "./intranet-content/intranet-content.component";
+import { UserContentComponent } from "./user-content/user-content.component";
 
 const routes: Routes = [
+  { path: "admin", component: AdminContentComponent },
+  { path: "intranet", component: IntranetContentComponent },
+  { path: "user", component: UserContentComponent },
   { path: "products", component: CatalogComponent },
   { path: "about", component: AboutComponent },
   { path: "contact", component: ContactComponent },

@@ -20,6 +20,14 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatIconModule } from "@angular/material/icon";
 import { MatMenuModule } from "@angular/material/menu";
+import { UserButtonMenuComponent } from './user-button-menu/user-button-menu.component';
+import { IntranetButtonMenuComponent } from './intranet-button-menu/intranet-button-menu.component';
+import { AdminButtonMenuComponent } from './admin-button-menu/admin-button-menu.component';
+import { FormsModule } from "@angular/forms";
+import { AdminContentComponent } from './admin-content/admin-content.component';
+import { IntranetContentComponent } from './intranet-content/intranet-content.component';
+import { UserContentComponent } from './user-content/user-content.component';
+import { MatDividerModule } from "@angular/material/divider";
 
 @NgModule({
   declarations: [
@@ -34,16 +42,24 @@ import { MatMenuModule } from "@angular/material/menu";
     SigninComponent,
     LoginButtonMenuComponent,
     LangButtonMenuComponent,
+    AdminButtonMenuComponent,
+    AdminContentComponent,
+    IntranetContentComponent,
+    IntranetButtonMenuComponent,
+    UserButtonMenuComponent,
+    UserContentComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatButtonModule,
-        MatToolbarModule,
-        MatIconModule,
-        MatMenuModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatMenuModule,
+    FormsModule,
+    MatDividerModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
