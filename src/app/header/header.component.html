@@ -1,15 +1,18 @@
 <!-- header -->
 <!--    route: none    -->
-<mat-toolbar-row>
-  <button mat-icon-button color="primary" (click)="onViewHome()">
-    <mat-icon color="accent">eco</mat-icon>
-  </button>
-  <span>
-<img src="../../assets/logo/Logo-ventalis-green.png" alt="Ventalis logo"/></span>
-  <button mat-button color="primary" (click)="onViewLang()">FR</button>
-  <button mat-button color="primary" (click)="onViewCatalog()">Catalogue</button>
-  <button mat-button color="primary" (click)="onViewAbout()">Présentation</button>
-  <button mat-button color="primary" (click)="onViewContact()">Contact</button>
-  <button mat-button color="primary" (click)="onViewLogin()">Se connecter</button>
-</mat-toolbar-row>
-
+<mat-toolbar>
+  <mat-toolbar-row>
+    <button mat-icon-button color="primary" (click)="onViewHome()">
+      <mat-icon color="accent">eco</mat-icon>
+    </button>
+    <!--  <span>
+        <img src="../../assets/logo/Logo-ventalis-green.png" alt="Ventalis logo"/>
+      </span>-->
+    <vtl-lang-button-menu (click)="onViewLang()"></vtl-lang-button-menu>
+    <!--<button mat-button color="primary" (click)="onViewLang()">FR</button>-->
+    <button mat-button color="primary" (click)="onViewCatalog()">Catalogue</button>
+    <button mat-button color="primary" (click)="onViewAbout()">Présentation</button>
+    <button mat-button color="primary" (click)="onViewContact()">Contact</button>
+    <vtl-login-button-menu (click)="onViewLogin()">Se connecter</vtl-login-button-menu>
+  </mat-toolbar-row>
+</mat-toolbar>
