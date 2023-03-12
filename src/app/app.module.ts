@@ -28,6 +28,7 @@ import { AdminContentComponent } from './admin-content/admin-content.component';
 import { IntranetContentComponent } from './intranet-content/intranet-content.component';
 import { UserContentComponent } from './user-content/user-content.component';
 import { MatDividerModule } from "@angular/material/divider";
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 @NgModule({
   declarations: [
@@ -51,17 +52,18 @@ import { MatDividerModule } from "@angular/material/divider";
     UserButtonMenuComponent,
     UserContentComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatMenuModule,
-    FormsModule,
-    MatDividerModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatButtonModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatMenuModule,
+        FormsModule,
+        MatDividerModule,
+        MatTooltipModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
