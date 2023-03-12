@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DomSanitizer } from "@angular/platform-browser";
 import { MatIconRegistry } from "@angular/material/icon";
+import { Router } from "@angular/router";
 
 const BS_LINKEDIN_ICON24 = `
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -32,10 +33,48 @@ const BS_YOUTUBE_ICON24 = `
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
-  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+
+  constructor(private router: Router, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
     iconRegistry.addSvgIconLiteral('bs-linkedin', sanitizer.bypassSecurityTrustHtml(BS_LINKEDIN_ICON24));
     iconRegistry.addSvgIconLiteral('bs-facebook', sanitizer.bypassSecurityTrustHtml(BS_FACEBOOK_ICON24));
     iconRegistry.addSvgIconLiteral('bs-twitter', sanitizer.bypassSecurityTrustHtml(BS_TWITTER_ICON24));
     iconRegistry.addSvgIconLiteral('bs-youtube', sanitizer.bypassSecurityTrustHtml(BS_YOUTUBE_ICON24));
+  }
+
+  onViewHome() {
+    this.router.navigateByUrl("");
+  }
+
+  onViewCatalog() {
+    this.router.navigateByUrl("products");
+  }
+
+  onViewAbout() {
+    this.router.navigateByUrl("about");
+  }
+
+  onViewContact() {
+    this.router.navigateByUrl("contact");
+  }
+
+/*  onViewCopyright() {
+    // not supposed to do anything
+  }*/
+
+  onViewPrivacyTerms() {
+    // TODO: legal content components
+  }
+
+  onViewTac() {
+    // TODO: legal content components
+  }
+
+  onViewGtc() {
+    // TODO: legal content components
+  }
+
+  onUpward() {
+    // TODO: Fix upward button
+    this.router.navigateByUrl(this.router.url)
   }
 }
