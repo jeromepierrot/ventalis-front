@@ -1,81 +1,79 @@
 <!-- footer.component.html -->
 <!--      route: none      -->
-<mat-toolbar id="footer" color="accent">
+<footer>
+  <mat-toolbar id="footer" color="warn">
+    <div>
+      <mat-toolbar-row  class="first-row">
+        <!-- 1st Row -->
+        <!-- linkedin icon -->
+        <button mat-icon-button>
+          <a matTooltip="Lien LinkedIn (inactif)" aria-label="Lien Linked In" href="">
+            <mat-icon svgIcon="bs-linkedin"></mat-icon>
+          </a>
+        </button>
+        <!-- facebook icon -->
+        <button mat-icon-button>
+          <a matTooltip="Lien Facebook (inactif)" aria-label="Lien Facebook" href="">
+            <mat-icon svgIcon="bs-facebook"></mat-icon>
+          </a>
+        </button>
+        <button mat-icon-button>
+          <!-- twitter icon -->
+          <a matTooltip="Lien Twitter (inactif)" aria-label="Lien Twitter" href="">
+            <mat-icon svgIcon="bs-twitter"></mat-icon>
+          </a>
+        </button>
+        <button mat-icon-button>
+          <!-- youtube icon -->
+          <a matTooltip="Lien vidéo Youtube" aria-label="Lien vidéo Youtube" href="https://youtu.be/tdelUss-5hY" target="_blank">
+            <mat-icon svgIcon="bs-youtube"></mat-icon>
+          </a>
+        </button>
+        <span class="spacer"></span>
+      </mat-toolbar-row>
 
-  <!-- 1st Row -->
-  <mat-toolbar-row>
-    <span class="spacer"></span>
+      <!-- 2nd Row -->
+      <mat-toolbar-row>
+        <div class="inner-row">
+          <button mat-button color="primary" (click)="onViewHome()" matTooltip="Page d'accueil" aria-label="Retour à la page d'accueil">Accueil</button>
+          <span class="spacer"></span>
+          <!-- TODO: Fix upward button -->
 
-    <!-- linkedin icon -->
-    <button mat-icon-button>
-      <a matTooltip="Lien LinkedIn (inactif)" aria-label="Lien Linked In" href="">
-        <mat-icon svgIcon="bs-linkedin"></mat-icon>
-      </a>
-    </button>
+          <!-- 3rd Row -->
+          <button mat-button color="primary" (click)="onViewCatalog()" matTooltip="Nos prestations" aria-label="Catalogue des prestations et des produits">Catalogue</button>
 
-    <!-- facebook icon -->
-      <button mat-icon-button>
-        <a matTooltip="Lien Facebook (inactif)" aria-label="Lien Facebook" href="">
-          <mat-icon svgIcon="bs-facebook"></mat-icon>
-        </a>
-      </button>
+          <!-- 4th Row -->
+          <button mat-button color="primary" (click)="onViewAbout()" matTooltip="A propos de Ventalis" aria-label="A propos de Ventalis">Présentation</button>
 
-    <button mat-icon-button>
-      <!-- twitter icon -->
-      <a matTooltip="Lien Twitter (inactif)" aria-label="Lien Twitter" href="">
-        <mat-icon svgIcon="bs-twitter"></mat-icon>
-      </a>
-    </button>
+          <!-- 5th Row -->
+          <button mat-button color="primary" (click)="onViewContact()" matTooltip="Nous contacter" aria-label="Contacter Ventalis">Contact</button>
 
-    <button mat-icon-button>
-      <!-- youtube icon -->
-      <a matTooltip="Lien vidéo Youtube" aria-label="Lien vidéo Youtube" href="https://youtu.be/tdelUss-5hY" target="_blank">
-        <mat-icon svgIcon="bs-youtube"></mat-icon>
-      </a>
-    </button>
-    <span class="spacer"></span>
-  </mat-toolbar-row>
+        </div>
+      </mat-toolbar-row>
+      <!-- 6th Row (the one before the last row) -->
+      <mat-toolbar-row class="last-row">
+        <button mat-button color="primary" matTooltip="Tous droits réservés" aria-label="Copyrights 2023 - Tous droits réservés" disableRipple>
+          <mat-icon>copyright</mat-icon>
+          Copyrights 2023 - Tous droits réservés
+        </button>
+      </mat-toolbar-row>
 
-  <!-- 2nd Row -->
-  <mat-toolbar-row>
-    <button mat-button color="primary" (click)="onViewHome()" matTooltip="Page d'accueil" aria-label="Retour à la page d'accueil">Accueil</button>
-    <span class="spacer"></span>
-    <!-- TODO: Fix upward button -->
-    <button mat-fab color="none" matTooltip="Retour en haut de page" aria-label="Retour en haut de page" (click)="onUpward()">
-      <mat-icon>arrow_upward</mat-icon>
-    </button>
-  </mat-toolbar-row>
+      <!-- last Row -->
+      <!-- TODO: Add legal contents into modal/dialog components -->
+      <mat-toolbar-row class="last-row">
+        <button mat-button color="primary" (click)="onViewPrivacyTerms()" matTooltip="Infos légales (RGPD)"  aria-label="Infos légales (RGPD)">
+          Legal terms privacy policy - GDPR
+        </button>
+        <button mat-button color="primary" (click)="onViewTac()" matTooltip="Infos légales (CGU)"  aria-label="Infos légales Conditions Générales d'Utilisation)">
+          General Terms and Conditions of Usage
+        </button>
+        <button mat-button color="primary" (click)="onViewGtc()" matTooltip="Infos légales (CGV)"  aria-label="Infos légales Conditions Générales de Vente">
+          General Terms and Conditions of Sale
+        </button>
+      </mat-toolbar-row>
+    </div>
+  </mat-toolbar>
+</footer>
 
-  <!-- 3rd Row -->
-  <mat-toolbar-row>
-    <button mat-button color="primary" (click)="onViewCatalog()" matTooltip="Nos prestations" aria-label="Catalogue des prestations et des produits">Catalogue</button>
-  </mat-toolbar-row>
 
-  <!-- 4th Row -->
-  <mat-toolbar-row>
-    <button mat-button color="primary" (click)="onViewAbout()" matTooltip="A propos de Ventalis" aria-label="A propos de Ventalis">Présentation</button>
-  </mat-toolbar-row>
 
-  <!-- 5th Row -->
-  <mat-toolbar-row>
-    <button mat-button color="primary" (click)="onViewContact()" matTooltip="Nous contacter" aria-label="Contacter Ventalis">Contact</button>
-  </mat-toolbar-row>
-
-  <!-- last Row -->
-  <!-- TODO: Add legal contents into modal/dialog components -->
-  <mat-toolbar-row>
-    <button mat-button color="primary" matTooltip="Tous droits réservés" aria-label="Copyrights 2023 - Tous droits réservés" disableRipple>
-      <mat-icon>copyright</mat-icon>
-      Copyrights 2023 - Tous droits réservés
-    </button>
-    <button mat-button color="primary" (click)="onViewPrivacyTerms()" matTooltip="Infos légales (RGPD)"  aria-label="Infos légales (RGPD)">
-      Legal terms privacy policy - GDPR
-    </button>
-    <button mat-button color="primary" (click)="onViewTac()" matTooltip="Infos légales (CGU)"  aria-label="Infos légales Conditions Générales d'Utilisation)">
-      General Terms and Conditions of Usage
-    </button>
-    <button mat-button color="primary" (click)="onViewGtc()" matTooltip="Infos légales (CGV)"  aria-label="Infos légales Conditions Générales de Vente">
-      General Terms and Conditions of Sale
-    </button>
-   </mat-toolbar-row>
-</mat-toolbar>

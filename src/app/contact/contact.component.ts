@@ -8,4 +8,11 @@ import { Component } from '@angular/core';
 export class ContactComponent {
   isTesting: boolean = true;
 
+  onUpward() {
+    // TODO: Fix upward button
+    //this.router.navigateByUrl(this.router.url)
+
+  }
 }
+
+

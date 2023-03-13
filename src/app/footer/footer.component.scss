@@ -1,8 +1,7 @@
-.container {
+#footer{
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  height: 200px;
+  height: 30vh;
+  width: 100vw;
 }
 
 .div {
@@ -15,7 +14,24 @@
   flex: 1 1 auto;
 }
 
-#footer {
-  clear : both;
-  height: 30vh;
+.first-row {
+  flex-flow: row wrap;
+  background-color: #90bdbd;
+}
+
+.inner-row {
+  flex-flow: column wrap;
+  justify-content: center;
+  align-content: baseline;
+  background-color: #bd90bd;
+}
+
+
+.last-row {
+  display: flex;
+  flex-flow: row wrap;
+  flex: 1 1 initial;
+  justify-content: center;
+  align-content: baseline;
+  background-color: #bd90bd90;
 }
