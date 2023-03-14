@@ -1,3 +1,10 @@
 .spacer{
   flex: 1 1 auto;
 }
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  clear: both;
+}
