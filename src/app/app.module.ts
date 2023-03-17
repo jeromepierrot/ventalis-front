@@ -29,6 +29,9 @@ import { IntranetContentComponent } from './intranet-content/intranet-content.co
 import { UserContentComponent } from './user-content/user-content.component';
 import { MatDividerModule } from "@angular/material/divider";
 import {MatTooltipModule} from "@angular/material/tooltip";
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -62,7 +65,10 @@ import {MatTooltipModule} from "@angular/material/tooltip";
         MatMenuModule,
         FormsModule,
         MatDividerModule,
-        MatTooltipModule
+        MatTooltipModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatSortModule
     ],
   providers: [],
   bootstrap: [AppComponent]
