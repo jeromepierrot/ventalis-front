@@ -1,7 +1,12 @@
 <!-- about.component.html | route: /about -->
 <main>
+  <ng-container *ngIf="!isTesting">
+    <h1>Presentation page</h1>
+    <h2>... Presentation page (in construction)...</h2>
+  </ng-container>
+
   <ng-container *ngIf="isTesting">
-    <!-- TODO: fausse structure texte à effacer -->
+    <!-- TODO: fausse structure de texte à effacer -->
     <h1>Presentation page</h1>
     <h2>... Presentation page (in construction)...</h2>
     <h3> Notre entreprise</h3>
@@ -21,8 +26,15 @@
     <p>Laoreet non curabitur gravida arcu ac tortor dignissim. Elit ut aliquam purus sit amet luctus venenatis. Malesuada bibendum arcu vitae elementum curabitur vitae nunc sed velit. Donec et odio pellentesque diam volutpat commodo sed egestas egestas. Tellus rutrum tellus pellentesque eu tincidunt tortor aliquam. Tincidunt eget nullam non nisi est. Lorem mollis aliquam ut porttitor leo a diam sollicitudin. Amet tellus cras adipiscing enim eu turpis egestas pretium. Porttitor leo a diam sollicitudin tempor id eu nisl. Gravida neque convallis a cras semper auctor neque. Auctor augue mauris augue neque gravida in fermentum et sollicitudin. Platea dictumst quisque sagittis purus. Nullam non nisi est sit amet facilisis magna etiam tempor. At ultrices mi tempus imperdiet nulla malesuada pellentesque. Fringilla ut morbi tincidunt augue interdum velit. Massa enim nec dui nunc mattis enim ut tellus elementum. Nisl purus in mollis nunc sed id semper risus in.</p>
     <p>Magna eget est lorem ipsum dolor sit amet consectetur adipiscing. Platea dictumst quisque sagittis purus. Aliquam vestibulum morbi blandit cursus. Neque sodales ut etiam sit. Id donec ultrices tincidunt arcu. In ante metus dictum at tempor commodo ullamcorper a. Duis ultricies lacus sed turpis tincidunt id. Mi bibendum neque egestas congue quisque. Dignissim convallis aenean et tortor at. Feugiat vivamus at augue eget arcu dictum. Lorem dolor sed viverra ipsum.</p>
 
-    <!-- END : faux texte à effacer -->
+  <!-- END : faux texte à effacer -->
   </ng-container >
-</main>
 
-<vtl-footer></vtl-footer>
+  <!-- FAB: version avec ancre (=> WORKS mais recharge la page) TODO: choisir entre ancre ou button -->
+  <a class="fab anchor" mat-fab color="none" matTooltip="Retour en haut de page" aria-label="Retour en haut de page" href="." target="_top">
+    <mat-icon>arrow_upward</mat-icon>
+  </a>
+  <!-- FAB: version avec button + directive (=> ne recharge pas la page / meilleure option) TODO: choisir entre ancre ou button -->
+  <button class="fab" mat-fab color="none" matTooltip="Retour en haut de page" aria-label="Retour en haut de page" (click)="onUpward()">
+    <mat-icon>arrow_upward</mat-icon>
+  </button>
+</main>

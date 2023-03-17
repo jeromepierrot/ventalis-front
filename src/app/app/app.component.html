@@ -1,4 +1,6 @@
 <!-- app.component.html  -->
 <!--      route: /       -->
 <vtl-header></vtl-header>
+
 <router-outlet></router-outlet>
+<vtl-footer *ngIf="!noFooter" class="footer"></vtl-footer>
