@@ -2,7 +2,7 @@
 <!--    route: /products    -->
 <main>
 
-  <ng-container *ngIf="isTesting">
+  <ng-container *ngIf="!isTesting">
     <h1>... Catalog page (in construction)...</h1>
     <h2>Catalogue</h2>
   </ng-container>
@@ -30,14 +30,4 @@
 
     <!-- END : faux texte à effacer -->
   </ng-container >
-  <!-- FAB: version avec ancre (=> WORKS mais recharge la page) TODO: choisir entre ancre ou button -->
-  <a class="fab anchor" mat-fab color="none" matTooltip="Retour en haut de page" aria-label="Retour en haut de page" href="." target="_top">
-    <mat-icon>arrow_upward</mat-icon>
-  </a>
-  <!-- FAB: version avec button + directive (=> ne recharge pas la page / meilleure option) TODO: choisir entre ancre ou button -->
-  <button class="fab" mat-fab color="none" matTooltip="Retour en haut de page" aria-label="Retour en haut de page" (click)="onUpward()">
-    <mat-icon>arrow_upward</mat-icon>
-  </button>
-
-
 </main>

@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: "admin", component: AdminContentComponent },
   { path: "intranet", component: IntranetContentComponent },
   { path: "user", component: UserContentComponent },
-  { path: "products", component: CatalogComponent },
+  { path: "catalog", component: CatalogComponent },
   { path: "about", component: AboutComponent },
   { path: "contact", component: ContactComponent },
   { path: "login", component: LoginFormComponent },

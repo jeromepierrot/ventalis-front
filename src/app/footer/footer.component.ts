@@ -46,7 +46,7 @@ export class FooterComponent {
   }
 
   onViewCatalog() {
-    this.router.navigateByUrl("products");
+    this.router.navigateByUrl("catalog");
   }
 
   onViewAbout() {

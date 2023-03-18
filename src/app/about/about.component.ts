@@ -11,10 +11,4 @@ export class AboutComponent implements OnInit {
   ngOnInit(): void {
     this.isTesting = true;
   }
-
-  onUpward() {
-    // TODO: Fix upward button
-    //this.router.navigateByUrl(this.router.url)
-
-  }
 }

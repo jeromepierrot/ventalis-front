@@ -1,10 +1,10 @@
 <!-- footer.component.html -->
 <!--      route: none      -->
 <footer>
-  <mat-toolbar id="footer" color="warn">
+  <mat-toolbar color="none">
     <div>
-      <mat-toolbar-row  class="first-row">
-        <!-- 1st Row -->
+      <!-- 1st Row -->
+      <mat-toolbar-row class="first-row" >
         <!-- linkedin icon -->
         <button mat-icon-button>
           <a matTooltip="Lien LinkedIn (inactif)" aria-label="Lien Linked In" href="">
@@ -35,21 +35,27 @@
       <!-- 2nd Row -->
       <mat-toolbar-row>
         <div class="inner-row">
-          <button mat-button color="primary" (click)="onViewHome()" matTooltip="Page d'accueil" aria-label="Retour à la page d'accueil">Accueil</button>
-          <span class="spacer"></span>
-          <!-- TODO: Fix upward button -->
+          <div>
+            <button mat-button color="primary" (click)="onViewHome()" matTooltip="Page d'accueil" aria-label="Retour à la page d'accueil">Accueil</button>
+          </div>
 
           <!-- 3rd Row -->
-          <button mat-button color="primary" (click)="onViewCatalog()" matTooltip="Nos prestations" aria-label="Catalogue des prestations et des produits">Catalogue</button>
+          <div>
+            <button mat-button color="primary" (click)="onViewCatalog()" matTooltip="Nos prestations" aria-label="Catalogue des prestations et des produits">Catalogue</button>
+          </div>
 
           <!-- 4th Row -->
-          <button mat-button color="primary" (click)="onViewAbout()" matTooltip="A propos de Ventalis" aria-label="A propos de Ventalis">Présentation</button>
+          <div>
+            <button mat-button color="primary" (click)="onViewAbout()" matTooltip="A propos de Ventalis" aria-label="A propos de Ventalis">Présentation</button>
+          </div>
 
           <!-- 5th Row -->
-          <button mat-button color="primary" (click)="onViewContact()" matTooltip="Nous contacter" aria-label="Contacter Ventalis">Contact</button>
-
+          <div>
+            <button mat-button color="primary" (click)="onViewContact()" matTooltip="Nous contacter" aria-label="Contacter Ventalis">Contact</button>
+          </div>
         </div>
       </mat-toolbar-row>
+
       <!-- 6th Row (the one before the last row) -->
       <mat-toolbar-row class="last-row">
         <button mat-button color="primary" matTooltip="Tous droits réservés" aria-label="Copyrights 2023 - Tous droits réservés" disableRipple>
