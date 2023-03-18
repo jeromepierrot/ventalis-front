@@ -7,10 +7,11 @@ import {Component, OnInit} from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
-  noFooter:boolean = false;
+  noFooter!:boolean;
 
   title = 'ventalis-front';
 
   ngOnInit():void {
+    this.noFooter = false;
   }
 }

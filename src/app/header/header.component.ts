@@ -66,7 +66,7 @@ export class HeaderComponent {
     this.router.navigateByUrl("")
   }
   onViewCatalog() {
-    this.router.navigateByUrl("products")
+    this.router.navigateByUrl("catalog")
   }
 
   onViewAbout() {
