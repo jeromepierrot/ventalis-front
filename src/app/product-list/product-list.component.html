@@ -1,0 +1,7 @@
+<!-- product-list component HTML -->
+<div>
+  <ng-container>
+    <vtl-product-item *ngFor="let productItem of products$ | async" [productItem]="productItem"></vtl-product-item>
+  </ng-container>
+</div>
+

@@ -6,9 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./catalog.component.scss']
 })
 export class CatalogComponent implements OnInit {
-  isTesting!: boolean;
+  loaded!: boolean;
+
+  constructor() {
+  }
 
   ngOnInit(): void {
-    this.isTesting = true;
+    this.loaded = true;
   }
+
+  ngOnDestroy(): void {
+    this.loaded = false;
+  }
+
+
 }

@@ -1,0 +1,7 @@
+<!-- category-list component HTML -->
+<ng-container>
+  <ul class="item-list">
+    <h3>Categories</h3>
+    <vtl-category-item *ngFor="let categoryItem of categories$ | async" [categoryItem]="categoryItem"></vtl-category-item>
+  </ul>
+</ng-container>
