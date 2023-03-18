@@ -1,0 +1,21 @@
+<!-- product-item component HTML -->
+<ng-container>
+  <div class="product-card">
+    <div>
+      <img *ngIf="!viewAsProductList" [src]="pictureUrl" alt="Aperçu du produit">
+    </div>
+    <div>
+      <h2>{{ productItem.label | titlecase }}</h2>
+      <h3 *ngIf="!viewAsProductList">Description :</h3>
+      <p *ngIf="!viewAsProductList">{{ productItem.description }}</p>
+      <p>
+        <span>Prix (unitaire HT) : {{ productItem.unitPriceHt | currency : 'EUR' }}</span>
+        <span> (Quantité minimale : {{ productItem.minOrderQuantity | number:'1.0-0':'fr-FR' }})</span>
+      </p>
+    </div>
+    <div>
+      <button *ngIf="viewAsProductList" mat-flat-button color="accent" (click)="onViewProduct()">Details</button>
+      <button *ngIf="!viewAsProductList" mat-flat-button color="accent" (click)="onViewProduct()">Hide Details</button>
+    </div>
+  </div>
+</ng-container>
