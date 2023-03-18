@@ -4,7 +4,8 @@
   <mat-toolbar color="none">
     <div>
       <!-- 1st Row -->
-      <mat-toolbar-row class="first-row" >
+      <mat-toolbar-row>
+        <div class="first-row">
         <!-- linkedin icon -->
         <button mat-icon-button>
           <a matTooltip="Lien LinkedIn (inactif)" aria-label="Lien Linked In" href="">
@@ -30,30 +31,29 @@
           </a>
         </button>
         <span class="spacer"></span>
+        </div>
       </mat-toolbar-row>
 
       <!-- 2nd Row -->
-      <mat-toolbar-row>
-        <div class="inner-row">
-          <div>
+      <mat-toolbar-row class="inner-row">
+          <div class="inner-content">
             <button mat-button color="primary" (click)="onViewHome()" matTooltip="Page d'accueil" aria-label="Retour à la page d'accueil">Accueil</button>
           </div>
 
           <!-- 3rd Row -->
-          <div>
+          <div class="inner-content">
             <button mat-button color="primary" (click)="onViewCatalog()" matTooltip="Nos prestations" aria-label="Catalogue des prestations et des produits">Catalogue</button>
           </div>
 
           <!-- 4th Row -->
-          <div>
+          <div class="inner-content">
             <button mat-button color="primary" (click)="onViewAbout()" matTooltip="A propos de Ventalis" aria-label="A propos de Ventalis">Présentation</button>
           </div>
 
           <!-- 5th Row -->
-          <div>
+          <div class="inner-content">
             <button mat-button color="primary" (click)="onViewContact()" matTooltip="Nous contacter" aria-label="Contacter Ventalis">Contact</button>
           </div>
-        </div>
       </mat-toolbar-row>
 
       <!-- 6th Row (the one before the last row) -->

@@ -41,7 +41,6 @@ import { AdminContentComponent } from './admin-content/admin-content.component';
 import { IntranetContentComponent } from './intranet-content/intranet-content.component';
 import { UserContentComponent } from './user-content/user-content.component';
 import { UpFabButtonComponent } from './up-fab-button/up-fab-button.component';
-import {MatTooltipModule} from "@angular/material/tooltip";
 
 @NgModule({
   declarations: [
@@ -67,7 +66,7 @@ import {MatTooltipModule} from "@angular/material/tooltip";
     ProductListComponent,
     ProductItemComponent,
     CategoryListComponent,
-    CategoryItemComponent
+    CategoryItemComponent,
     UpFabButtonComponent,
   ],
     imports: [

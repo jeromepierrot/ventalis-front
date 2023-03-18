@@ -1,30 +1,28 @@
 footer{
   display: flex;
-  height: 30vh;
   width: 100vw;
-}
-
-.div {
-  height: 100px;
-  width: 100px;
-  margin: auto;
 }
 
 .spacer {
   flex: 1 1 auto;
 }
 
-.first-row {
+/*.first-row {
+  display: flex;
   flex-flow: row wrap;
-}
+}*/
 
 .inner-row {
-  flex-flow: column wrap;
-  justify-content: center;
+  display: flex;
+  flex-flow: column;
+  flex: 1 1 initial;
+  justify-content: space-around;
   align-content: baseline;
-  background-color: #bd90bd;
+  height: 200px;
 }
 
+.inner-content {
+}
 
 .last-row {
   display: flex;
@@ -32,5 +30,9 @@ footer{
   flex: 1 1 initial;
   justify-content: center;
   align-content: baseline;
-  background-color: #bd90bd90;
+}
+
+@media only screen and (max-width: 599.98px) {
+  .inner-row{
+  }
 }
