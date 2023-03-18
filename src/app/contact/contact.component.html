@@ -2,15 +2,54 @@
 <!--    route: /contact     -->
 
 <main>
-  <div>
 
-    <p>... Contact page (in progress)...</p>
+    <ng-container *ngIf="!isTesting">
+      <div class="form-card">
+      <h2>Nous contacter</h2>
+
+        <form #contactForm=ngForm (ngSubmit)="onSubmitForm(contactForm)">
+          <div class="form-group">
+            <label for="companyInput">Nom de société</label>
+            <input id="companyInput" type="text" [(ngModel)]="contactCompany" name="contactCompany" required>
+          </div>
+          <div class="form-group">
+            <label for="contactLastnameInput">Votre nom</label>
+            <input class="form-item" id="contactLastnameInput" type="text" [(ngModel)]="contactLastname" name="contactLastname" required>
+          </div>
+          <div class="form-group">
+            <label for="contactFirstnameInput">Votre prénom</label>
+            <input id="contactFirstnameInput" type="text" [(ngModel)]="contactFirstname" name="contactFirstname">
+          </div>
+          <div class="form-group">
+          <label for="contactEmailInput">Votre adresse email</label>
+          <input id="contactEmailInput" type="email" [(ngModel)]="contactEmail" name="contactEmail" required>
+            </div>
+          <div class="form-group">
+            <label for="subjectInput">Objet de la demande</label>
+            <input id="subjectInput" type="text" [(ngModel)]="contactSubject" name="contactSubject" required>
+          </div>
+          <div class="form-group">
+            <label class="form-item" for="descriptionInput" >Description de la demande</label>
+            <textarea class="form-item" id="descriptionInput" type="email" [(ngModel)]="contactDescription" name="contactDescription" rows="6" required></textarea>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" id="validateEntry" [(ngModel)]="validateForm" name="validateForm" required>
+            <label for="validateEntry">Je confirme l'exactitude des informations envoyées et j'accepte d'être recontacté par email suite à cette demande</label>
+          </div>
+          <div class="action-buttons">
+            <span><button mat-flat-button color="primary" type="reset">Réinitialiser</button></span>
+            <span><button mat-raised-button color="accent" type="submit">Valider</button></span>
+          </div>
+        </form>
+      </div>
+    </ng-container>
+
     <ng-container *ngIf="isTesting">
-
+      <!-- BEGIN : pour test faux texte à effacer -->
+      <h1>... Contact page (in progress)...</h1>
       <!-- TODO: faux texte à effacer -->
-      <h1>Page contact</h1>
-      <h2>... Contact page (en construction)...</h2>
-      <h3> titre 3 </h3>
+      <h2>Page contact (test)</h2>
+      <h3>... Contact page (en construction)...</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed libero enim sed faucibus turpis. Donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu. Amet tellus cras adipiscing enim eu. Erat imperdiet sed euismod nisi porta lorem mollis aliquam ut. Semper quis lectus nulla at. Interdum velit euismod in pellentesque massa placerat duis ultricies lacus. Aliquet lectus proin nibh nisl condimentum id venenatis. Eu consequat ac felis donec et odio pellentesque diam volutpat. Tellus mauris a diam maecenas sed enim ut sem. Ut ornare lectus sit amet. Leo integer malesuada nunc vel risus commodo viverra. Dictum at tempor commodo ullamcorper a lacus. Vitae elementum curabitur vitae nunc sed velit dignissim sodales ut. Mi sit amet mauris commodo. Eleifend quam adipiscing vitae proin sagittis nisl rhoncus. Malesuada bibendum arcu vitae elementum curabitur vitae nunc sed velit. Rhoncus dolor purus non enim praesent elementum facilisis leo. Sed euismod nisi porta lorem mollis aliquam ut porttitor.</p>
       <h3> titre 3 </h3>
       <p>Aliquet risus feugiat in ante metus dictum at tempor. Fusce ut placerat orci nulla pellentesque dignissim enim sit. Nunc sed augue lacus viverra vitae congue eu consequat. Diam vel quam elementum pulvinar etiam non quam. Bibendum arcu vitae elementum curabitur vitae nunc sed velit. Faucibus et molestie ac feugiat sed lectus. Sapien eget mi proin sed libero. Dictum non consectetur a erat nam. At ultrices mi tempus imperdiet nulla malesuada pellentesque elit. Mi proin sed libero enim sed faucibus. Tristique senectus et netus et. Placerat orci nulla pellentesque dignissim enim sit amet venenatis urna. Nunc vel risus commodo viverra maecenas accumsan.</p>
@@ -34,19 +73,5 @@
       <p>Laoreet non curabitur gravida arcu ac tortor dignissim. Elit ut aliquam purus sit amet luctus venenatis. Malesuada bibendum arcu vitae elementum curabitur vitae nunc sed velit. Donec et odio pellentesque diam volutpat commodo sed egestas egestas. Tellus rutrum tellus pellentesque eu tincidunt tortor aliquam. Tincidunt eget nullam non nisi est. Lorem mollis aliquam ut porttitor leo a diam sollicitudin. Amet tellus cras adipiscing enim eu turpis egestas pretium. Porttitor leo a diam sollicitudin tempor id eu nisl. Gravida neque convallis a cras semper auctor neque. Auctor augue mauris augue neque gravida in fermentum et sollicitudin. Platea dictumst quisque sagittis purus. Nullam non nisi est sit amet facilisis magna etiam tempor. At ultrices mi tempus imperdiet nulla malesuada pellentesque. Fringilla ut morbi tincidunt augue interdum velit. Massa enim nec dui nunc mattis enim ut tellus elementum. Nisl purus in mollis nunc sed id semper risus in.</p>
       <p>Magna eget est lorem ipsum dolor sit amet consectetur adipiscing. Platea dictumst quisque sagittis purus. Aliquam vestibulum morbi blandit cursus. Neque sodales ut etiam sit. Id donec ultrices tincidunt arcu. In ante metus dictum at tempor commodo ullamcorper a. Duis ultricies lacus sed turpis tincidunt id. Mi bibendum neque egestas congue quisque. Dignissim convallis aenean et tortor at. Feugiat vivamus at augue eget arcu dictum. Lorem dolor sed viverra ipsum.</p>
       <!-- END : faux texte à effacer -->
-
     </ng-container >
-    <!-- FAB: version avec ancre (=> WORKS mais recharge la page) TODO: choisir entre ancre ou button -->
-    <a class="fab anchor" mat-fab color="none" matTooltip="Retour en haut de page" aria-label="Retour en haut de page" href="." target="_top">
-      <mat-icon>arrow_upward</mat-icon>
-    </a>
-    <!-- FAB: version avec button + directive (=> ne recharge pas la page / meilleure option) TODO: choisir entre ancre ou button -->
-    <button class="fab" mat-fab color="none" matTooltip="Retour en haut de page" aria-label="Retour en haut de page" (click)="onUpward()">
-      <mat-icon>arrow_upward</mat-icon>
-    </button>
-  </div>
-
 </main>
-
-
-<vtl-footer></vtl-footer>

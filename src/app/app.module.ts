@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
+
 import { AppComponent } from './app/app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -14,21 +17,22 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { LoginButtonMenuComponent } from './login-button-menu/login-button-menu.component';
 import { LangButtonMenuComponent } from './lang-button-menu/lang-button-menu.component';
 import { SigninFormComponent } from './signin-form/signin-form.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserButtonMenuComponent } from './user-button-menu/user-button-menu.component';
+import { IntranetButtonMenuComponent } from './intranet-button-menu/intranet-button-menu.component';
+import { AdminButtonMenuComponent } from './admin-button-menu/admin-button-menu.component';
+import { AdminContentComponent } from './admin-content/admin-content.component';
+import { IntranetContentComponent } from './intranet-content/intranet-content.component';
+import { UserContentComponent } from './user-content/user-content.component';
 
 import { MatButtonModule } from "@angular/material/button";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatIconModule } from "@angular/material/icon";
 import { MatMenuModule } from "@angular/material/menu";
-import { UserButtonMenuComponent } from './user-button-menu/user-button-menu.component';
-import { IntranetButtonMenuComponent } from './intranet-button-menu/intranet-button-menu.component';
-import { AdminButtonMenuComponent } from './admin-button-menu/admin-button-menu.component';
-import { FormsModule } from "@angular/forms";
-import { AdminContentComponent } from './admin-content/admin-content.component';
-import { IntranetContentComponent } from './intranet-content/intranet-content.component';
-import { UserContentComponent } from './user-content/user-content.component';
 import { MatDividerModule } from "@angular/material/divider";
-import {MatTooltipModule} from "@angular/material/tooltip";
+import { MatTooltipModule } from "@angular/material/tooltip";
+
+
+
 
 @NgModule({
   declarations: [
@@ -52,18 +56,19 @@ import {MatTooltipModule} from "@angular/material/tooltip";
     UserButtonMenuComponent,
     UserContentComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatButtonModule,
-        MatToolbarModule,
-        MatIconModule,
-        MatMenuModule,
-        FormsModule,
-        MatDividerModule,
-        MatTooltipModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    HttpClientModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatMenuModule,
+    MatDividerModule,
+    MatTooltipModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
