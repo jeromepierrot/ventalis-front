@@ -1,0 +1,36 @@
+footer{
+  display: flex;
+  height: 30vh;
+  width: 100vw;
+}
+
+.div {
+  height: 100px;
+  width: 100px;
+  margin: auto;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.first-row {
+  flex-flow: row wrap;
+}
+
+.inner-row {
+  flex-flow: column wrap;
+  justify-content: center;
+  align-content: baseline;
+  background-color: #bd90bd;
+}
+
+
+.last-row {
+  display: flex;
+  flex-flow: row wrap;
+  flex: 1 1 initial;
+  justify-content: center;
+  align-content: baseline;
+  background-color: #bd90bd90;
+}

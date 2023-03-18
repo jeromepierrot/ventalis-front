@@ -1,0 +1,13 @@
+<!-- app.component.html  -->
+<!--      route: /       -->
+
+<vtl-header class="header"></vtl-header>
+<div class="wrapper">
+  <router-outlet></router-outlet>
+</div>
+
+
+<span class="footer-block">
+  <vtl-up-fab-button class="fab"></vtl-up-fab-button>
+  <vtl-footer *ngIf="!noFooter" class="footer"></vtl-footer>
+</span>

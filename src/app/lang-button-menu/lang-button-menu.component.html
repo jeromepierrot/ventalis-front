@@ -1,0 +1,19 @@
+<button mat-button [matMenuTriggerFor]="lang_menu">
+  <span>FR</span>
+  <mat-icon>arrow_drop_down</mat-icon>
+</button>
+
+<mat-menu #lang_menu="matMenu" xPosition="after">
+  <button mat-menu-item>
+    <span>DE</span>
+  </button>
+  <button mat-menu-item>
+    <span>EN</span>
+  </button>
+  <button mat-menu-item>
+    <span>ES</span>
+  </button>
+  <button mat-menu-item>
+    <span>FR</span>
+  </button>
+</mat-menu>
