@@ -46,8 +46,8 @@ Si Angular CLI est déjà installé et à jour mais utilise NPM comme Package Ma
 
 ng config -g cli.packageManager yarn
 
-Désormais tout nouveau projet sera créé avec des packages téléchargé et/ou mis à jour avec Yarn.
-Avant d'utiliser Yarn, il faut nettoyer sinon
+Désormais tout nouveau projet sera créé avec des packages téléchargés et/ou mis à jour avec Yarn.
+Avant d'utiliser Yarn, il faudrait nettoyer (= supprimer) le dossier local "node_modules" de l'application en question (cf. §6 pour revenir à NPM).
 
 4. Téléchargement des dépendances :
 

@@ -1,0 +1,20 @@
+<!-- Login Dialog/Modal -->
+<mat-dialog-content class="mat-typography">
+  <mat-tab-group>
+    <!-- TAB1 : CONNEXION / LOGIN -->
+    <mat-tab label="Connexion">
+      <vtl-login-form></vtl-login-form>
+    </mat-tab>
+
+    <!-- TAB2 : INSCRIPTION / SIGNUP -->
+    <mat-tab label="Inscription">
+      <vtl-signup-form></vtl-signup-form>
+    </mat-tab>
+  </mat-tab-group>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-flat-button color="primary" mat-dialog-close="">Annuler</button>
+  <!--TODO : submit form infos to back-end server-->
+  <button mat-flat-button color="accent" [mat-dialog-close]="submit" cdkFocusInitial>Valider</button>
+</mat-dialog-actions>

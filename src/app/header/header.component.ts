@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from "@angular/router";
+import { LoginDialogComponent } from "../login/login-dialog/login-dialog.component";
+import { MatDialog } from "@angular/material/dialog";
 
 @Component({
   selector: 'vtl-header',
@@ -30,7 +32,7 @@ export class HeaderComponent {
   public hideShortcutMenuItems: boolean = false;
   public hideSupportMenuItem: boolean = false;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, public loginDialog: MatDialog) { }
 
   onInit(){
     this.doCheck()
@@ -94,5 +96,13 @@ export class HeaderComponent {
 
   onViewLoginForm() {
     this.router.navigateByUrl("login")
+  }
+
+  openLoginDialog() {
+    const dialogRef = this.loginDialog.open(LoginDialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 }

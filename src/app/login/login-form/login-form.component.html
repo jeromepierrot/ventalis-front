@@ -1,0 +1,60 @@
+<!-- login-form.component.html -->
+<!--     route: /login    -->
+
+<mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="loginFormGroup">
+    <form [formGroup]="loginFormGroup">
+      <ng-template matStepLabel>Entrez votre identifiant</ng-template>
+      <p>
+        <mat-form-field appearance="fill" class="input-field">
+          <mat-label>Identifiant</mat-label>
+          <input matInput placeholder="Email (ex: monemail@example.com)" formControlName="loginCtrl" required>
+          <mat-error *ngIf="loginFormGroup.controls.loginCtrl.invalid">{{getErrorMessage()}}</mat-error>
+          <mat-hint></mat-hint>
+        </mat-form-field>
+      </p>
+      <div>
+        <button mat-flat-button color="primary" matStepperNext>Suivant</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="pwdFormGroup">
+    <form [formGroup]="pwdFormGroup">
+      <ng-template matStepLabel>Mot de passe</ng-template>
+      <p>
+        <mat-form-field appearance="fill" class="input-field">
+          <mat-label>Mot de passe</mat-label>
+          <input matInput formControlName="pwdCtrl" min="8" [type]="hide ? 'password' : 'text'" placeholder="Mot de passe à 8 caractères minimum, comprenant au moins 1 chiffre, 1 maj., 1 min et 1 caractère spécial"
+                 required>
+          <mat-icon matSuffix (click)="hide = !hide"  [attr.aria-label]="'Masquer le mot de passe'" [attr.aria-pressed]="hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          <mat-error *ngIf="pwdFormGroup.controls.pwdCtrl.invalid">{{getPwdErrorMessage()}}</mat-error>
+          <mat-hint></mat-hint>
+        </mat-form-field>
+      </p>
+      <div>
+        <button mat-flat-button color="primary" matStepperPrevious>Précédent</button>
+        <button mat-flat-button color="warn" (click)="stepper.reset()">Réinitialiser</button>
+
+          <p>Merci de valider pour vous connecter à votre espace.</p>
+      </div>
+    </form>
+  </mat-step>
+</mat-stepper>
+
+
+<!-- TESTING TODO : remove this part when fully done-->
+<!--<p>Page (ou ) de connexion</p>
+<ng-form>Formulaire à créer</ng-form>
+
+<ul>
+  <li>
+    <button mat-flat-button (click)="onViewUserPage()">TEST ROUTE TO USER</button>
+  </li>
+  <li>
+    <button mat-flat-button (click)="onViewIntranetPage()">TEST ROUTE TO INTRANET</button>
+  </li>
+  <li>
+    <button mat-flat-button (click)="onViewAdminPage()">TEST ROUTE TO ADMIN</button>
+  </li>
+</ul>-->
+<!-- END OF TEST PART -->

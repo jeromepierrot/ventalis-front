@@ -15,7 +15,7 @@
     <button mat-button color="primary" (click)="onViewAbout()" aria-label="Lien vers la page A propos de Ventalis">Présentation</button>
     <button mat-button color="primary" (click)="onViewContact()" aria-label="Lien vers la page de contact">Contact</button>
     <span class="spacer"></span>
-    <button mat-flat-button color="accent" *ngIf="!isLoggedIn; else subMenuForUser" (click)="onViewLogin()">Se connecter</button>
+    <button mat-flat-button color="accent" *ngIf="!isLoggedIn; else subMenuForUser" (click)="openLoginDialog()">Se connecter</button>
     <vtl-user-button-menu *ngIf="isLoggedIn && hasUserRole"></vtl-user-button-menu>
     <vtl-intranet-button-menu  *ngIf="isLoggedIn && hasEmployeeRole"></vtl-intranet-button-menu>
     <vtl-admin-button-menu *ngIf="isLoggedIn && hasAdminRole"></vtl-admin-button-menu>
