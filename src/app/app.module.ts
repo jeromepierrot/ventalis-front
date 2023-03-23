@@ -19,10 +19,10 @@ import { LoginFormComponent } from './login/login-form/login-form.component';
 import { LoginButtonMenuComponent } from './login/login-button-menu/login-button-menu.component';
 import { LangButtonMenuComponent } from './lang-button-menu/lang-button-menu.component';
 import { SignupFormComponent } from './login/signup-form/signup-form.component';
-import { ProductListComponent } from './product-list/product-list.component';
-import { ProductItemComponent } from './product-item/product-item.component';
-import { CategoryListComponent } from './category-list/category-list.component';
-import { CategoryItemComponent } from './category-item/category-item.component';
+import { ProductListComponent } from './catalog/product-list/product-list.component';
+import { ProductItemComponent } from './catalog/product-item/product-item.component';
+import { CategoryListComponent } from './catalog/category-list/category-list.component';
+import { CategoryItemComponent } from './catalog/category-item/category-item.component';
 
 import { MatButtonModule } from "@angular/material/button";
 import { MatToolbarModule } from "@angular/material/toolbar";

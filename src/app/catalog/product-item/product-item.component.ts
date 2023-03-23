@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Product } from "../models/products";
+import { Product } from "../../models/products";
 
 @Component({
   selector: 'vtl-product-item',

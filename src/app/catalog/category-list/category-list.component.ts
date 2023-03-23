@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import { Category } from "../models/categories";
+import { Category } from "../../models/categories";
 import { Observable } from "rxjs";
-import { ApiMproductsService } from "../services/api-mproducts.service";
+import { ApiMproductsService } from "../../services/api-mproducts.service";
 @Component({
   selector: 'vtl-category-list',
   templateUrl: './category-list.component.html',

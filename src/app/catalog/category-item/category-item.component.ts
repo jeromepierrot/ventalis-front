@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Category } from "../models/categories";
+import { Category } from "../../models/categories";
 
 @Component({
   selector: 'vtl-category-item',

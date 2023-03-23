@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from "rxjs";
-import { Product } from "../models/products";
-import { ApiMproductsService } from "../services/api-mproducts.service";
+import { Product } from "../../models/products";
+import { ApiMproductsService } from "../../services/api-mproducts.service";
 
 @Component({
   selector: 'vtl-product-list',
