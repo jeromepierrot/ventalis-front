@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { LoginDialogComponent } from './login/login-dialog/login-dialog.component';
 import { LoginFormComponent } from './login/login-form/login-form.component';
 import { LoginButtonMenuComponent } from './login/login-button-menu/login-button-menu.component';
 import { LangButtonMenuComponent } from './lang-button-menu/lang-button-menu.component';
@@ -42,12 +43,11 @@ import { AdminContentComponent } from './admin-content/admin-content.component';
 import { IntranetContentComponent } from './intranet-content/intranet-content.component';
 import { UserContentComponent } from './user-content/user-content.component';
 import { UpFabButtonComponent } from './up-fab-button/up-fab-button.component';
-import {MatTabsModule} from "@angular/material/tabs";
-import { LoginDialogComponent } from './login/login-dialog/login-dialog.component';
-import {MatDialogModule} from "@angular/material/dialog";
-import {MatStepperModule} from "@angular/material/stepper";
-import {MatInputModule} from "@angular/material/input";
-import {MatCheckboxModule} from "@angular/material/checkbox";
+import { MatTabsModule} from "@angular/material/tabs";
+import { MatDialogModule} from "@angular/material/dialog";
+import { MatStepperModule} from "@angular/material/stepper";
+import { MatInputModule} from "@angular/material/input";
+import { MatCheckboxModule} from "@angular/material/checkbox";
 
 @NgModule({
   declarations: [
@@ -75,7 +75,7 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
     CategoryListComponent,
     CategoryItemComponent,
     UpFabButtonComponent,
-    LoginDialogComponent,
+    LoginDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -108,5 +108,4 @@ export class AppModule {
   constructor() {
     registerLocaleData(fr.default);
   }
-
 }

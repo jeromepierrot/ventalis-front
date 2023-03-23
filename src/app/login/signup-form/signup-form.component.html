@@ -8,7 +8,7 @@
       <p>
           <mat-form-field appearance="fill" class="input-field">
           <mat-label>Société</mat-label>
-          <input matInput placeholder="Société" formControlName="companyCtrl" required>
+          <input matInput [(ngModel)]="companyInput" (ngModelChange)="updateSignupFormComplete()" placeholder="Société" formControlName="companyCtrl" required>
             <mat-error *ngIf="namingFormGroup.controls.companyCtrl.invalid">{{getCompanyErrorMessage()}}</mat-error>
             <mat-hint></mat-hint>
         </mat-form-field>
@@ -16,7 +16,7 @@
       <p>
         <mat-form-field appearance="fill" class="input-field">
           <mat-label>Nom</mat-label>
-          <input matInput placeholder="Nom, ex: Giesse" formControlName="namingCtrl" required>
+          <input matInput type="text" [(ngModel)]="lastnameInput" (ngModelChange)="updateSignupFormComplete()" placeholder="Nom, ex: Giesse" formControlName="namingCtrl" required>
           <mat-error *ngIf="namingFormGroup.controls.namingCtrl.invalid">{{getNamingErrorMessage()}}</mat-error>
           <mat-hint></mat-hint>
         </mat-form-field>
@@ -24,7 +24,7 @@
       <p>
         <mat-form-field appearance="fill" class="input-field">
           <mat-label>Prénom</mat-label>
-          <input matInput placeholder="Prénom, ex: Eric" formControlName="noCtrl">
+          <input matInput type="text" [(ngModel)]="firstnameInput" (ngModelChange)="updateSignupFormComplete()" placeholder="Prénom, ex: Eric" formControlName="noCtrl">
           <mat-hint>(facultatif)</mat-hint>
         </mat-form-field>
       </p>
@@ -40,7 +40,7 @@
       <p>
         <mat-form-field appearance="fill" class="input-field">
           <mat-label>Identifiant (email)</mat-label>
-          <input matInput formControlName="loginCtrl" placeholder="Adresse email (ex: eric.giesse@example.com)" required>
+          <input matInput type="email" [(ngModel)]="emailInput" (ngModelChange)="updateSignupFormComplete()" formControlName="loginCtrl" placeholder="Adresse email (ex: eric.giesse@example.com)" required>
           <mat-error *ngIf="loginFormGroup.controls.loginCtrl.invalid">{{getEmailErrorMessage()}}</mat-error>
           <mat-hint></mat-hint>
         </mat-form-field>
@@ -51,7 +51,7 @@
       <p>
         <mat-form-field appearance="fill" class="input-field">
           <mat-label>Mot de passe</mat-label>
-          <input matInput formControlName="pwdCtrl" min="8" [type]="hideOriginal ? 'password' : 'text'" placeholder="Mot de passe à 8 caractères minimum, comprenant au moins 1 chiffre, 1 maj., 1 min et 1 caractère spécial"
+          <input matInput [type]="hideOriginal ? 'password' : 'text'" [(ngModel)]="pwdInput" (ngModelChange)="updateSignupFormComplete()" formControlName="pwdCtrl" min="8"  placeholder="Mot de passe à 8 caractères minimum, comprenant au moins 1 chiffre, 1 maj., 1 min et 1 caractère spécial"
                  required>
           <mat-icon matSuffix (click)="hideOriginal = !hideOriginal" [attr.aria-label]="'Masquer le mot de passe'" [attr.aria-pressed]="hideOriginal">{{hideOriginal ? 'visibility_off' : 'visibility'}}</mat-icon>
           <mat-error *ngIf="loginFormGroup.controls.pwdCtrl.invalid">{{getPwdErrorMessage()}}</mat-error>
@@ -61,7 +61,7 @@
       <p>
         <mat-form-field appearance="fill" class="input-field">
           <mat-label>Vérification du mot de passe</mat-label>
-          <input matInput [type]="hideCheck ? 'password':'text'" formControlName="checkCtrl" placeholder="Vérification du mot de passe" required>
+          <input matInput [type]="hideCheck ? 'password':'text'" [(ngModel)]="pwdCheckInput" (ngModelChange)="updateSignupFormComplete()" formControlName="checkCtrl" placeholder="Vérification du mot de passe" required>
           <mat-icon matSuffix (click)="hideCheck = !hideCheck" [attr.aria-label]="'Masquer le mot de passe'" [attr.aria-pressed]="hideCheck">{{hideCheck ? 'visibility_off' : 'visibility'}}</mat-icon>
           <mat-error *ngIf="loginFormGroup.controls.checkCtrl.invalid">{{getCheckErrorMessage()}}</mat-error>
           <mat-hint></mat-hint>
@@ -76,26 +76,28 @@
   <mat-step [stepControl]="tacFormGroup">
     <form [formGroup]="tacFormGroup">
       <p>Le formulaire d'inscription est maintenant complet.</p>
-      <p>Merci de cocher les cases ci-dessous afin de terminer votre inscription</p>
+      <p>Merci de cocher les cases ci-dessous pour confirmer votre inscription</p>
       <ng-template matStepLabel>C'est presque fini!</ng-template>
       <p>
-        <mat-checkbox formControlName="tacCtrl" required>
+        <mat-checkbox [(ngModel)]="tacBoxes[0]" (ngModelChange)="updateSignupFormComplete()" formControlName="tacCtrl" required>
           J'ai lu et j'accepte les conditions générales de vente (CGV)
         </mat-checkbox>
       </p>
       <p>
-        <mat-checkbox formControlName="tacCtrl" required>
+        <mat-checkbox [(ngModel)]="tacBoxes[1]" (ngModelChange)="updateSignupFormComplete()" formControlName="tacCtrl" required>
           J'ai lu et j'accepte les conditions générales d'utilisation (CGU) du site internet
         </mat-checkbox>
       </p>
       <p>
-        <mat-checkbox formControlName="tacCtrl" required>
+        <mat-checkbox [(ngModel)]="tacBoxes[2]" (ngModelChange)="updateSignupFormComplete()" formControlName="tacCtrl" required>
           J'ai pris connaissances des mentions légales et de la politique de confidentialité
         </mat-checkbox>
       </p>
       <div>
         <button mat-flat-button color="primary" matStepperPrevious>Précédent</button>
-        <button mat-flat-button color="warn" (click)="stepper.reset()">Réinitialiser</button>
+        <button mat-flat-button color="accent" type="submit" [disabled]="!signupFormComplete">Valider</button>
+        <p>Merci de valider pour enregistrer votre inscription</p>
+        <!--<button mat-flat-button color="warn" (click)="stepper.reset()">Réinitialiser</button>-->
       </div>
     </form>
   </mat-step>
