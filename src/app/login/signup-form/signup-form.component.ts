@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Router } from "@angular/router";
 import { FormBuilder, Validators } from "@angular/forms";
 
@@ -8,6 +8,15 @@ import { FormBuilder, Validators } from "@angular/forms";
   styleUrls: ['./signup-form.component.scss']
 })
 export class SignupFormComponent implements OnInit {
+
+  signupFormComplete: boolean = false;
+  tacBoxes: boolean[] = [false, false, false];
+  companyInput: string | undefined;
+  lastnameInput: string | undefined;
+  firstnameInput: string | undefined;
+  emailInput: string | undefined;
+  pwdInput: string | undefined;
+  pwdCheckInput: string | undefined;
 
   nameRegexPattern:string = '^([a-zA-Z]\\-)';
   emailRegexPattern:string = '^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$ ';
@@ -79,7 +88,7 @@ export class SignupFormComponent implements OnInit {
       return '*validation du mot de passe obligatoire';
     }
 
-    // '*obligatoire 8 caractères minimum, comprenant au moins 1 lettre majuscule, 1 lettre minuscule, 1 chiffre et 1 caractère spécial'
+    // TODO: '*obligatoire 8 caractères minimum, comprenant au moins 1 lettre majuscule, 1 lettre minuscule, 1 chiffre et 1 caractère spécial'
 /*    if(this.loginFormGroup.controls.checkCtrl.hasError(MinValidator.toString())) {
       return '*8 caractères minimum obligatoire';
     }*/
@@ -88,9 +97,18 @@ export class SignupFormComponent implements OnInit {
   }
 
   getTacErrorMessage(): string {
-    if(this.loginFormGroup.controls.loginCtrl.hasError('required')) {
-      return '*champs obligatoires';
-    }
-    return this.loginFormGroup.controls.loginCtrl.hasError('email') ? 'Case non cochées' : '';
+    this.signupFormComplete =
+      this.tacBoxes[0] &&
+      this.tacBoxes[1] &&
+      this.tacBoxes[2];
+    return !this.signupFormComplete ? 'Cases non cochées' : '';
+  }
+
+  updateSignupFormComplete() {
+    // TODO: not finished
+    this.signupFormComplete =
+      this.tacBoxes[0] &&
+      this.tacBoxes[1] &&
+      this.tacBoxes[2];
   }
 }

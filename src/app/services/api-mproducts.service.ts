@@ -23,7 +23,7 @@ export class ApiMproductsService implements OnInit {
   }
 
   getProducts(): Observable<Product[]>{
-    return this.http.get<Product[]>("http://localhost:9081/catalog/products");
+    return this.http.get<Product[]>(this.productsUrl);
   }
 
   getCategoryById(id: number): Observable<Category> {

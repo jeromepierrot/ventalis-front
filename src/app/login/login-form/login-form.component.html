@@ -8,7 +8,7 @@
       <p>
         <mat-form-field appearance="fill" class="input-field">
           <mat-label>Identifiant</mat-label>
-          <input matInput placeholder="Email (ex: monemail@example.com)" formControlName="loginCtrl" required>
+          <input matInput [(ngModel)]="emailInput" (ngModelChange)="updateLoginFormComplete()" placeholder="Email (ex: mon-email@example.com)" formControlName="loginCtrl" required>
           <mat-error *ngIf="loginFormGroup.controls.loginCtrl.invalid">{{getErrorMessage()}}</mat-error>
           <mat-hint></mat-hint>
         </mat-form-field>
@@ -24,7 +24,7 @@
       <p>
         <mat-form-field appearance="fill" class="input-field">
           <mat-label>Mot de passe</mat-label>
-          <input matInput formControlName="pwdCtrl" min="8" [type]="hide ? 'password' : 'text'" placeholder="Mot de passe à 8 caractères minimum, comprenant au moins 1 chiffre, 1 maj., 1 min et 1 caractère spécial"
+          <input matInput [(ngModel)]="pwdInput" (ngModelChange)="updateLoginFormComplete()" formControlName="pwdCtrl" min="8" [type]="hide ? 'password' : 'text'" placeholder="Mot de passe à 8 caractères minimum, comprenant au moins 1 chiffre, 1 maj., 1 min et 1 caractère spécial"
                  required>
           <mat-icon matSuffix (click)="hide = !hide"  [attr.aria-label]="'Masquer le mot de passe'" [attr.aria-pressed]="hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
           <mat-error *ngIf="pwdFormGroup.controls.pwdCtrl.invalid">{{getPwdErrorMessage()}}</mat-error>
@@ -33,9 +33,9 @@
       </p>
       <div>
         <button mat-flat-button color="primary" matStepperPrevious>Précédent</button>
-        <button mat-flat-button color="warn" (click)="stepper.reset()">Réinitialiser</button>
-
-          <p>Merci de valider pour vous connecter à votre espace.</p>
+        <button mat-flat-button color="accent" type="submit" [disabled]="!loginFormComplete" (click)="onSubmit()">Valider</button>
+        <p>Merci de valider pour vous connecter à votre espace.</p>
+<!--        <button mat-flat-button color="warn" (click)="stepper.reset()">Réinitialiser</button>-->
       </div>
     </form>
   </mat-step>
