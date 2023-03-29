@@ -1,21 +1,38 @@
 <!-- product-item component HTML -->
 <ng-container>
-  <div class="product-card">
-    <div>
-      <img *ngIf="!viewAsProductList" [src]="pictureUrl" alt="Aperçu du produit">
-    </div>
-    <div>
-      <h2>{{ productItem.label | titlecase }}</h2>
-      <h3 *ngIf="!viewAsProductList">Description :</h3>
-      <p *ngIf="!viewAsProductList">{{ productItem.description }}</p>
-      <p>
-        <span>Prix (unitaire HT) : {{ productItem.unitPriceHt | currency : 'EUR' }}</span>
-        <span> (Quantité minimale : {{ productItem.minOrderQuantity | number:'1.0-0':'fr-FR' }})</span>
-      </p>
-    </div>
-    <div>
-      <button *ngIf="viewAsProductList" mat-flat-button color="accent" (click)="onViewProduct()">Details</button>
-      <button *ngIf="!viewAsProductList" mat-flat-button color="accent" (click)="onViewProduct()">Hide Details</button>
-    </div>
-  </div>
+  <mat-card class="product-card" >
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>{{ productItem.label | uppercase }}</mat-card-title>
+        <mat-card-subtitle *ngIf="!viewAsProductList">Catégorie : <span>{{ productItem.category.name | lowercase }} </span></mat-card-subtitle>
+        <mat-card-subtitle *ngIf="viewAsProductList"><span>Prix (unitaire HT) : {{ productItem.unitPriceHt | currency : 'EUR' }}</span></mat-card-subtitle>
+        <img *ngIf="!viewAsProductList" [src]="pictureUrl" alt="Aperçu du produit">
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content *ngIf="!viewAsProductList">
+      <mat-card-title>Description :</mat-card-title>
+      <p>{{ productItem.description }}</p>
+      <mat-card-title-group>
+        <mat-card-subtitle>Prix (unitaire HT) : {{ productItem.unitPriceHt | currency : 'EUR' }}</mat-card-subtitle>
+        <mat-card-subtitle>(Quantité minimale : {{ productItem.minOrderQuantity | number:'1.0-0':'fr-FR' }})</mat-card-subtitle>
+      </mat-card-title-group>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <mat-card-subtitle  *ngIf="!viewAsProductList">Quantité</mat-card-subtitle>
+<!--      <button *ngIf="!viewAsProductList" mat-flat-button color="accent" (click)="onRemoveQty()" [disabled]="logged" matTooltip="Veuillez vous connecter pour pouvoir modifier des articles">
+        <mat-icon>remove-circle</mat-icon></button>-->
+      <input name="quantity" id="qty" *ngIf="!viewAsProductList" type="number" min="1000" step="100" [placeholder]="productItem.minOrderQuantity" [readonly]="!logged" [matTooltip]="toolTipMsg" >
+      <!--      <button *ngIf="!viewAsProductList" mat-flat-button color="accent" (click)="onAddQty()" [disabled]="!logged" matTooltip="Veuillez vous connecter pour pouvoir ajouter des articles">
+        <mat-icon>add-circle</mat-icon></button>-->
+    </mat-card-actions>
+    <mat-card-actions align="end">
+      <button *ngIf="!viewAsProductList" mat-flat-button color="accent" (click)="onViewProduct()" [disabled]="!logged">
+        <mat-icon>add_shopping_cart</mat-icon>Ajouter au panier</button>
+    </mat-card-actions>
+    <mat-card-actions align="end">
+      <button *ngIf="viewAsProductList" mat-flat-button color="accent" (click)="onViewProduct()">Détails</button>
+      <button *ngIf="!viewAsProductList && logged" mat-flat-button color="primary" (click)="onViewProduct()">Réduire</button>
+      <button *ngIf="!viewAsProductList && !logged" mat-flat-button color="accent" (click)="onViewProduct()">Réduire</button>
+    </mat-card-actions>
+  </mat-card>
 </ng-container>

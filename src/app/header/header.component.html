@@ -3,12 +3,12 @@
 <header>
 <mat-toolbar id="header">
   <mat-toolbar-row>
-    <button mat-icon-button color="primary" (click)="onViewHome()" aria-label="Lien vers la page d'accueil">
-      <mat-icon color="accent">eco</mat-icon>
+    <button mat-button color="none" (click)="onViewHome()" aria-label="Lien vers la page d'accueil">
+      <img class="logo-menu"  src="../../assets/logo/Logo-ventalis-green_bkg-regular.png" alt="Logo ventalis">
     </button>
-    <!--  <span>
-        <img src="../../assets/logo/Logo-ventalis-green.png" alt="Ventalis logo"/>
-      </span>-->
+<!--    <button mat-icon-button color="primary" (click)="onViewHome()" aria-label="Lien vers la page d'accueil">
+      <mat-icon color="accent">eco</mat-icon>
+    </button>-->
     <vtl-lang-button-menu (click)="onViewLang()"></vtl-lang-button-menu>
     <!--<button mat-button color="primary" (click)="onViewLang()">FR</button>-->
     <button mat-button color="primary" (click)="onViewCatalog()" aria-label="Lien vers la page Catalogue">Catalogue</button>

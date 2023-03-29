@@ -48,6 +48,8 @@ import { MatDialogModule} from "@angular/material/dialog";
 import { MatStepperModule} from "@angular/material/stepper";
 import { MatInputModule} from "@angular/material/input";
 import { MatCheckboxModule} from "@angular/material/checkbox";
+import { MatCardModule } from "@angular/material/card";
+import { ProductItemDialogComponent } from './catalog/product-item-dialog/product-item-dialog.component';
 
 
 
@@ -78,30 +80,32 @@ import { MatCheckboxModule} from "@angular/material/checkbox";
     CategoryListComponent,
     CategoryItemComponent,
     UpFabButtonComponent,
-    LoginDialogComponent
+    LoginDialogComponent,
+    ProductItemDialogComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatButtonModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatMenuModule,
-    MatDividerModule,
-    MatTooltipModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatTabsModule,
-    MatDialogModule,
-    MatStepperModule,
-    MatInputModule,
-    MatCheckboxModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatButtonModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatMenuModule,
+        MatDividerModule,
+        MatTooltipModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatSortModule,
+        MatTabsModule,
+        MatDialogModule,
+        MatStepperModule,
+        MatInputModule,
+        MatCheckboxModule,
+        MatCardModule
+    ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr-FR' }
   ],

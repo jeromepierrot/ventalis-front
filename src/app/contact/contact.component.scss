@@ -1,3 +1,18 @@
+main {
+  display: flex;
+  background-image: url("../../assets/pictures/pousse_arbre_left-02.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: 0px;
+}
+
+img {
+  position: fixed;
+  width: 100vw;
+//  filter: blur(0.5rem);
+}
+
 input[type=text], input[type=email] {
   border: none;
   border-bottom: 2px solid gray;
@@ -21,7 +36,6 @@ textarea {
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 4px;
-  background-color: #f8f8f8;
   resize: none;
 }
 
@@ -32,6 +46,9 @@ textarea {
   padding: 10px 30px;
   border-radius: 4px;
   box-shadow: lightgray 4px 4px 20px;
+
+  background-color: #F5F5F580;
+
 }
 
 .form-group {
@@ -45,8 +62,6 @@ textarea {
 .form-label {
 
 }
-
-
 
 input, textarea {
   width: 50%;
